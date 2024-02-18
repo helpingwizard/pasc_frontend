@@ -11,7 +11,7 @@ export default function PostPage() {
         </div>
 
         <div className="max-w-10xl">
-            <div className="block max-w-9xl p-6 bg-slate-100 rounded-lg shadow-lg">
+            <div className="block max-w-10xl p-6 bg-slate-100 rounded-lg shadow-lg">
 
                 <div>
                     <div className="flex">
