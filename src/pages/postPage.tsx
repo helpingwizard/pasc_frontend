@@ -22,7 +22,7 @@ export default function PostPage() {
                         </div>
 
                         <div className="ml-3">
-                            <p className="text-xl font-bold text-black">Soham Kottawar</p>
+                            <p className="text-xl font-bold text-black">Tanish Charthankar</p>
                             <p className="text-lg font-semibold text-blue-500">Full Stack Dev</p>
                             <p className="text-sm text-gray-500">Mountain view, California</p>
 
