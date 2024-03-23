@@ -12,15 +12,18 @@ export default function PostPage() {
 
     const handleSubmit = async () => {
         try {
-            const response = await axios.post("https://alumni-backend-q2j4.onrender.com/createPost", {
-                user_id: user_id,
+            const response = await axios.post("http://localhost:3000/posts/createPost", {
+                fk_user: '13',
+                fk_domain_id :"1",
                 title: title,
-                content: content
+                content: content,
+                link :"ihih"
             }, {
                 headers: {
-                    "Authorization": "Bearer " + localStorage.getItem("token")
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzIiwiaWF0IjoxNzExMjIzNjU1LCJleHAiOjE3MTEzMTAwNTV9.HK_rNC_kBia147qXaM6jCImf2c4WnSctktffx2CoHHg"
                 }
             });
+            console.log(response)
             alert("post added");
     
         } catch (error:any) {
@@ -63,6 +66,7 @@ export default function PostPage() {
 
                     <div className="mt-4 w-full">
                         <input
+                        onChange={(e)=>{setTitle(e.target.value)}}
                             type="text"
                             id="title-input"
                             placeholder="Title"
@@ -77,6 +81,7 @@ export default function PostPage() {
                         />
                         <br />
                         <textarea
+                        onChange={(e) => setContent(e.target.value)}
                             id="thoughts-input"
                             placeholder="What you want to Talk about?"
                             className="bg-slate-200 border text-black text-base placeholder-gray-500 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-8  h-80 resize-none dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
