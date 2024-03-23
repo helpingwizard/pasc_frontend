@@ -1,6 +1,8 @@
 import axios from "axios"
 import { useRouter } from "next/router"
 import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function PostPage() {
     
@@ -73,13 +75,14 @@ export default function PostPage() {
                     Add media
                     </button>
 
-                    <button className="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 border border-blue-700 rounded">
+                    <button onClick={() => {toast("button pressed")}}className="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 border border-blue-700 rounded">
                     Save draft
                     </button>
 
-                    <button onClick= {handleSubmit} className="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 border border-blue-700 rounded">
+                    <button onClick= {() => {handleSubmit(); toast("Posted!")}} className="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 border border-blue-700 rounded">
                     Post
                     </button>
+                    <ToastContainer />
                 </div>
             </div>
         </div>
