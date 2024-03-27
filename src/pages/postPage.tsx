@@ -15,18 +15,18 @@ export default function PostPage() {
     const handleSubmit = async () => {
         try {
             const response = await axios.post("http://localhost:3000/posts/createPost", {
-                fk_user: '13',
+                
                 fk_domain_id :"1",
                 title: title,
                 content: content,
                 link :"ihih"
             }, {
                 headers: {
-                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzIiwiaWF0IjoxNzExMjIzNjU1LCJleHAiOjE3MTEzMTAwNTV9.HK_rNC_kBia147qXaM6jCImf2c4WnSctktffx2CoHHg"
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5IiwiaWF0IjoxNzExNTUxMDkyLCJleHAiOjE3MTE2Mzc0OTJ9.sNNmC1I0OZpg7Nj112kVTWSC0Xrt_KUAnOSvvVJ1I6I"
                 }
             });
             console.log(response)
-            alert("post added");
+            toast("post added")
     
         } catch (error:any) {
             console.error("Error:", error);
@@ -79,7 +79,7 @@ export default function PostPage() {
                     Save draft
                     </button>
 
-                    <button onClick= {() => {handleSubmit(); toast("Posted!")}} className="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 border border-blue-700 rounded">
+                    <button onClick= {() => {handleSubmit()}} className="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 border border-blue-700 rounded">
                     Post
                     </button>
                     <ToastContainer />
